@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container loginIn" style="backgroundImage: url(http://codegen.caihongy.cn/20210225/d865474db1c04d6ba278116977c08d5d.jpg)">
+    <div class="container loginIn" style="backgroundImage: url('../assets/img/LoginBackground.jpg')">
 
       <div :class="2 == 1 ? 'left' : 2 == 2 ? 'left center' : 'left right'" style="backgroundColor: rgba(15, 35, 35, 0.2)">
         <el-form class="login-form" label-position="left" :label-width="2 == 3 ? '56px' : '0px'">

@@ -25,7 +25,6 @@
 			border-color: rgba(0, 0, 0, 1);
 			border-radius: 0px;
 			background-color: rgba(28, 185, 200, 1);
-			box-shadow: ;
 		}
 		#swiper .layui-carousel-ind li.layui-this {
 			width: 0px;
@@ -35,7 +34,6 @@
 			border-color: rgba(255, 255, 255, 0.3);
 			border-radius: 0;
 			background-color: rgba(28, 185, 200, 1);
-			box-shadow: ;
 		}
 		
 		.index-title {
@@ -64,6 +62,12 @@
 		.layui-laypage .layui-laypage-skip {
 		  padding-left: 10px;
 		}
+		.homeBody{
+			background-image: url("../../img/homeBodyBackground.jpg");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
 	</style>
 	<body>
 
@@ -91,31 +95,35 @@
 			<div class="line-container">
 				<p class="line"> 交流论坛 </p>
 			</div> -->
-			<div class="index-title" :style='{"padding":"20px","boxShadow":"","margin":"10px auto","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(247, 247, 247, 0)","color":"#333","borderRadius":"4px","borderWidth":"0","fontSize":"30px","borderStyle":"solid","height":"auto"}'>
-			  <span>FORUM / INFORMATION</span><span>交流论坛</span>
-			</div>
-			<!-- 标题 -->
-
-			<div class="forum-container">
-				<div class="btn-container" :style='{"padding":"0 10px","boxShadow":"","margin":"10px 0 10px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(255, 255, 255, 0)","borderRadius":"4px","alignItems":"center","borderWidth":"0","borderStyle":"solid","justifyContent":"flex-end","height":"64px"}'>
-					<!-- <input type="" name="" id="" value="" />
-					<button :style='{"padding":"0 15px","boxShadow":"0 0 8px rgba(0,0,0,0)","margin":"0 0 0 10px","borderColor":"#409EFF","backgroundColor":"rgba(28, 185, 200, 1)","color":"#fff","borderRadius":"4px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"40px"}'  type="button" class="layui-btn layui-btn-lg btn-theme">
-						<i v-if="true" class="layui-icon">&#xe654;</i> 搜索
-					</button> -->
-					<button :style='{"padding":"0 15px","boxShadow":"0 0 8px rgba(0,0,0,0)","margin":"0 0 0 10px","borderColor":"#409EFF","backgroundColor":"rgba(28, 185, 200, 1)","color":"#fff","borderRadius":"4px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"40px"}'  @click="jump('../forum/add.html')" type="button" class="layui-btn layui-btn-lg btn-theme">
-						<i v-if="true" class="layui-icon">&#xe654;</i> 发布帖子
-					</button>
+			<div class="homeBody">
+				<div class="index-title" :style='{"padding":"20px","boxShadow":"","margin":"10px auto","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(247, 247, 247, 0)","color":"#333","borderRadius":"4px","borderWidth":"0","fontSize":"30px","borderStyle":"solid","height":"auto"}'>
+					<span>FORUM / INFORMATION</span><span>交流论坛</span>
 				</div>
-				<div class="forum-list">
-					<div v-for="(item,index) in dataList" v-bind:key="index" href="javascript:void(0);" @click="jump('../forum/detail.html?id='+item.id);" class="forum-item">
-						<h2 class="h2">{{item.title}}（发布人：{{item.username}}）</h2>
-						<div class="create-time">
-							{{item.addtime}}
+				<!-- 标题 -->
+
+				<div class="forum-container">
+					<div class="btn-container" :style='{"padding":"0 10px","boxShadow":"","margin":"10px 0 10px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(255, 255, 255, 0)","borderRadius":"4px","alignItems":"center","borderWidth":"0","borderStyle":"solid","justifyContent":"flex-end","height":"64px"}'>
+						<!-- <input type="" name="" id="" value="" />
+                        <button :style='{"padding":"0 15px","boxShadow":"0 0 8px rgba(0,0,0,0)","margin":"0 0 0 10px","borderColor":"#409EFF","backgroundColor":"rgba(28, 185, 200, 1)","color":"#fff","borderRadius":"4px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"40px"}'  type="button" class="layui-btn layui-btn-lg btn-theme">
+                            <i v-if="true" class="layui-icon">&#xe654;</i> 搜索
+                        </button> -->
+						<button :style='{"padding":"0 15px","boxShadow":"0 0 8px rgba(0,0,0,0)","margin":"0 0 0 10px","borderColor":"#409EFF","backgroundColor":"rgba(28, 185, 200, 1)","color":"#fff","borderRadius":"4px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"40px"}'  @click="jump('../forum/add.html')" type="button" class="layui-btn layui-btn-lg btn-theme">
+							<i v-if="true" class="layui-icon">&#xe654;</i> 发布帖子
+						</button>
+					</div>
+					<div class="forum-list">
+						<div v-for="(item,index) in dataList" v-bind:key="index" href="javascript:void(0);" @click="jump('../forum/detail.html?id='+item.id);" class="forum-item">
+							<h2 class="h2">{{item.title}}（发布人：{{item.username}}）</h2>
+							<div class="create-time">
+								{{item.addtime}}
+							</div>
 						</div>
 					</div>
+					<div class="pager" id="pager" :style="{textAlign:2==1?'left':2==2?'center':'right'}"></div>
 				</div>
-				<div class="pager" id="pager" :style="{textAlign:2==1?'left':2==2?'center':'right'}"></div>
 			</div>
+
+
 		</div>
 
 		<!-- layui -->

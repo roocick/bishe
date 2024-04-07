@@ -38,7 +38,6 @@
 		border-color: rgba(0, 0, 0, 1);
 		border-radius: 0px;
 		background-color: rgba(28, 185, 200, 1);
-		box-shadow: ;
 	}
 	#test1 .layui-carousel-ind li.layui-this {
 		width: 0px;
@@ -48,10 +47,8 @@
 		border-color: rgba(255, 255, 255, 0.3);
 		border-radius: 0;
 		background-color: rgba(28, 185, 200, 1);
-		box-shadow: ;
 	}
 
-	// 列表
 	.recommend {
 		padding: 10px 0;
 		display: flex;
@@ -241,6 +238,12 @@ width: 100%;
   .layui-laypage .layui-laypage-skip {
     padding-left: 10px;
   }
+.homeBody{
+	background-image: url("../../img/homeBodyBackground.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
 </style>
 <body>
   <div id="app">
@@ -253,7 +256,7 @@ width: 100%;
       		  </div>
       		</div>
     </div>
-	<div class="recommend index-pv1" :style='{"padding":"10px 0 10px 0","boxShadow":"","margin":"10px 0 0 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(255, 255, 255, 0)","borderRadius":"0","borderWidth":"0","borderStyle":"solid"}'>
+	<div class="recommend index-pv1 homeBody" :style='{"padding":"10px 0 10px 0","boxShadow":"","margin":"10px 0 0 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(255, 255, 255, 0)","borderRadius":"0","borderWidth":"0","borderStyle":"solid"}'>
 		<div class="box" style='width:90%'>
 	    <div class="title" :style='{"padding":"10px 0 10px 0","boxShadow":"","margin":"10px 0 10px 0","borderColor":"rgba(85, 85, 85, 1)","backgroundColor":"rgba(255, 255, 255, 1)","borderRadius":"0px","borderWidth":"0 0 0 10px","borderStyle":"solid","justifyContent":"flex-start","height":"54px"}'>
 	      <span :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(255,0,0,1)","backgroundColor":"rgba(0,0,0,0)","color":"#333","borderRadius":"0 0 2px 0","borderWidth":"0","fontSize":"18px","borderStyle":"solid"}'>个人简历</span><span :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(0,0,0,0)","backgroundColor":"rgba(0,0,0,0)","color":"#999","borderRadius":"0","borderWidth":"0","fontSize":"14px","borderStyle":"solid"}'>您现在的位置：个人简历</span>

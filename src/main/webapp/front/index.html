@@ -64,7 +64,7 @@
 			border-width: 0;
 			border-style: solid;
 			border-color: rgba(0,0,0,.3);
-			box-shadow: ;
+			box-shadow: none;
 		}
 
 		#header .nav-top-tel {
@@ -77,7 +77,7 @@
 			border-width: 0;
 			border-style: solid;
 			border-color: rgba(0,0,0,.3);
-			box-shadow: ;
+			box-shadow: none;
 		}
 
 		#header .navs {
@@ -86,7 +86,7 @@
 			align-items: center;
 			box-sizing: border-box;
 			height: 104px;
-			background-color: rgba(37, 39, 48, 1);
+			background-color: #FFFFFF;
 			box-shadow: 0 1px 6px rgba(0,0,0,0);
 			justify-content: center;
 		}
@@ -94,7 +94,7 @@
 			width: auto;
 			line-height: 40px;
 			font-size: 40px;
-			color: rgba(255, 255, 255, 1);
+			color: rgb(0, 0, 0);
 			padding: 0 10px;
 			margin: 0px 10px 0 0;
 			border-radius: 6px;
@@ -109,14 +109,14 @@
 			line-height: 104px;
 			padding: 0 40px;
 			margin: 0;
-			color: rgba(255, 255, 255, 1);
+			color: #000000;
 			font-size: 15px;
 			border-radius: 0px;
 			border-width: 0;
 			border-style: solid;
 			border-color: rgba(0,0,0,.3);
 			background-color: $template2.front.base.nav.list.item.backgroundColor;
-			box-shadow: ;
+			box-shadow: none;
       text-align: center;
 		}
 		#header .navs li a{
@@ -136,7 +136,7 @@
 			border-style: solid;
 			border-color: rgba(0,0,0,.3);
 			background-color: rgba(28, 185, 200, 1);
-			box-shadow: 0px;
+			box-shadow: none;
 		}
 		#header .navs li:hover {
 			color: rgba(255, 255, 255, 1);
@@ -146,7 +146,7 @@
 			border-style: solid;
 			border-color: rgba(0,0,0,.3);
 			background-color: rgba(28, 185, 200, 1);
-			box-shadow: 0px;
+			box-shadow: none;
 		}
 	</style>
 	<body>
@@ -162,10 +162,10 @@
 				<div class="title" v-if="true" v-text="projectName"></div>
 				<div class="list">
 					<ul>
-						<li class='current'><a href="javascript:navPage('./pages/home/home.html')" class="menumain"><i v-if="false" class="layui-icon layui-icon-home"></i>首页</a></li>
-						<li v-for="(item,index) in indexNav" v-bind:key="index"><a :href="'javascript:navPage(\''+item.url+'\')'" class="menumain" style="cursor: pointer;"><i v-if="false" class="layui-icon" :class="iconArr[index]"></i>{{item.name}}</a></li>
-						<li><a href="javascript:centerPage();" class="menumain"><i v-if="false" class="layui-icon layui-icon-username"></i>个人中心</a></li>
-						<li><a :href="adminurl" target="_blank" class="menumain" style="cursor: pointer;"><i v-if="false" class="layui-icon layui-icon-link"></i>后台管理</a></li>
+						<li class='current' v-on:click ="navPage('./pages/home/home.html')">首页</li>
+						<li v-for="(item,index) in indexNav" v-bind:key="index" @click="navPage(item.url)">{{item.name}}</li>
+						<li v-on:click ="centerPage()">个人中心</li>
+						<li @click="adminurl">后台管理</li>
 						<li v-if="cartFlag"><a href="javascript:navPage('./pages/shop-cart/list.html')" class="menumain"><i v-if="false" class="layui-icon">&#xe657;</i>购物车</a></li>
 						<li v-if="chatFlag"><a href="javascript:chatTap()" class="menumain"><i v-if="false" class="layui-icon">&#xe677;</i>客服</a></li>
 					</ul>
@@ -220,6 +220,23 @@
 								$(this).addClass("current").siblings().removeClass("current");
 							}
 						}
+					},
+
+					// 导航栏跳转
+					navPage(url) {
+						console.log(url);
+					  	localStorage.setItem('iframeUrl', url);
+					  	document.getElementById('iframe').src = url;
+						console.log(document.getElementById('iframe').src)
+					},
+					centerPage() {
+						var userTable = localStorage.getItem('userTable');
+						if (userTable) {
+							localStorage.setItem('iframeUrl', './pages/' + userTable + '/center.html');
+							document.getElementById('iframe').src = './pages/' + userTable + '/center.html';
+						} else {
+							window.location.href = './pages/login/login.html'
+						}
 					}
 				}
 			});
@@ -238,23 +255,6 @@
 						area: ['600px', '600px'],
 						content: './pages/chat/chat.html'
 					});
-				} else {
-					window.location.href = './pages/login/login.html'
-				}
-			}
-
-			// 导航栏跳转
-			function navPage(url) {
-				localStorage.setItem('iframeUrl', url);
-				document.getElementById('iframe').src = url;
-			}
-
-			// 跳转到个人中心也
-			function centerPage() {
-				var userTable = localStorage.getItem('userTable');
-				if (userTable) {
-					localStorage.setItem('iframeUrl', './pages/' + userTable + '/center.html');
-					document.getElementById('iframe').src = './pages/' + userTable + '/center.html';
 				} else {
 					window.location.href = './pages/login/login.html'
 				}

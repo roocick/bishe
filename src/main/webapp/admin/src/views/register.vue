@@ -396,7 +396,7 @@ export default {
 	}
 	
 	.container {
-		background-image: url("http://codegen.caihongy.cn/20210225/d865474db1c04d6ba278116977c08d5d.jpg");
+		background-image: url("../assets/img/LoginBackground.jpg");
 		height: 100vh;
 		background-position: center center;
 		background-size: cover;

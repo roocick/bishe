@@ -174,7 +174,7 @@ i, em {
 	font-size: 24px;
 	font-family: Arial;
 	color: #fff;
-	background: url(img/index_03.gif) left center no-repeat;
+	background: url(../img/index_44.gif) left center no-repeat;
 	padding-left: 30px;
 }
 #header .top .search {
@@ -198,7 +198,7 @@ i, em {
 }
 .search .button {
 	float: left;
-	background: url(img/index_07.gif) no-repeat;
+	background: url(../img/index_24.gif) no-repeat;
 	width: 9px;
 	height: 9px;
 	border: none;
@@ -225,7 +225,7 @@ i, em {
 }
 #footer {
 	width: 100%;
-	background: url(img/index_42.gif) center center no-repeat;
+	background: url(../img/index_35.gif) center center no-repeat;
 	height: 300px;
 	overflow: hidden
 }
@@ -242,7 +242,7 @@ i, em {
 	border-right: 1px dashed #ae1a25;
 	height: 143px;
 	overflow: hidden;
-	background: url(img/index_49.jpg) left 43px no-repeat;
+	background: url(../img/index_41.gif) left 43px no-repeat;
 	padding: 34px 0 0 133px;
 	color: #fff;
 	line-height: 22px;
@@ -331,7 +331,7 @@ i, em {
 	margin-top: 36px;
 }
 .ny_left .service_tel p {
-	background: url(img/service_tel.png) left center no-repeat;
+	background: url(../img/service_img.png) left center no-repeat;
 	padding-left: 29px;
 	font-size: 21px;
 	margin-left: 5px;

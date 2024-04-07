@@ -338,7 +338,6 @@ label {
 
 .center-container .left-container {
 	border: 2px dotted #EEEEEE;
-	background: #FFFFFF;
 	width: 200px;
 	padding-top: 20px;
 	height: 600px;
@@ -347,7 +346,6 @@ label {
 .center-container .right-container {
 	flex: 1;
 	border: 2px dotted #EEEEEE;
-	background: #FFFFFF;
 	text-align: left;
 	padding: 20px;
 	padding-top: 40px;
